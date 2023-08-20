@@ -13,18 +13,29 @@ public class Course {
 	
 	private String author;
 	
+	private Character isPublished;
+	
 	public Course() {
 		
 	}
 	
-	public Course(int id, String name, String author) {
+	public Course(int id, String name, String author, Character isPublished) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.author = author;
+		this.isPublished = isPublished;
 	}
 
 
+
+	public Character getIsPublished() {
+		return isPublished;
+	}
+
+	public void setIsPublished(Character isPublished) {
+		this.isPublished = isPublished;
+	}
 
 	public int getId() {
 		return id;

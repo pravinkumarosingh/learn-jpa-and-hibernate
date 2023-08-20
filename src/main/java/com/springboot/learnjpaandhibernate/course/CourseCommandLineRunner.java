@@ -24,10 +24,22 @@ public class CourseCommandLineRunner implements CommandLineRunner {
 //		System.out.println(courseJdbcRepository.findById(2));
 //		
 		
-		courseJpaRepository.insert(new Course(1,"Learn AWS", "in28minutes"));
-		courseJpaRepository.insert(new Course(2,"learn cpp", "cppnuts"));
+		courseJpaRepository.insert(new Course(1,"Learn AWS", "in28minutes",'Y'));
+		courseJpaRepository.insert(new Course(2,"learn cpp", "cppnuts",'N'));
+		courseJpaRepository.insert(new Course(3, "learn angular", "in28minutes",'Y'));
 		courseJpaRepository.delete(1);
 		System.out.println(courseJpaRepository.findById(2));
+		
+//		Course course = courseJpaRepository.findById(1);
+//		course.setName(null);
+//		courseJpaRepository.insert(course);
+		
+		Course course = courseJpaRepository.findById(3);
+		if(course.getIsPublished()!='N') {
+			System.out.println("ready to sale");
+		} else {
+			System.out.println("not ready to sale");
+		}
 	}
 
 }
